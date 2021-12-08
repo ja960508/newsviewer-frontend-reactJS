@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NewsManager from "./services/news";
+// import NewsList from "./components/news_list/news_list";
+// import Categories from "./components/categories/categories";
+// import { useCallback, useState } from "react";
+import { Route, Routes } from "react-router";
+import NewsPages from "./components/news_pages/news_pages";
+
+const newsManager = new NewsManager(process.env.REACT_APP_API_KEY);
 
 function App() {
+  // const [category, setCategory] = useState("all");
+  // const onSelect = useCallback((category) => setCategory(category), []);
+
+  // return (
+  //   <>
+  //     <Categories category={category} onSelect={onSelect}></Categories>
+  //     <NewsList newsManager={newsManager} category={category} />
+  //   </>
+  // );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route
+        path='/:category'
+        element={<NewsPages newsManager={newsManager} />}
+      />
+      <Route path='/' element={<NewsPages newsManager={newsManager} />} />;
+    </Routes>
   );
 }
 
