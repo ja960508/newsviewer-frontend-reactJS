@@ -9,16 +9,6 @@ import NewsPages from "./components/news_pages/news_pages";
 const newsManager = new NewsManager(process.env.REACT_APP_API_KEY);
 
 function App() {
-  // const [category, setCategory] = useState("all");
-  // const onSelect = useCallback((category) => setCategory(category), []);
-
-  // return (
-  //   <>
-  //     <Categories category={category} onSelect={onSelect}></Categories>
-  //     <NewsList newsManager={newsManager} category={category} />
-  //   </>
-  // );
-
   return (
     <Routes>
       <Route
