@@ -8,8 +8,6 @@ import NewsPages from "./components/news_pages/news_pages";
 
 const newsManager = new NewsManager(process.env.REACT_APP_API_KEY);
 
-console.log(process.env.REACT_APP_API_KEY);
-
 function App() {
   return (
     <Routes>
